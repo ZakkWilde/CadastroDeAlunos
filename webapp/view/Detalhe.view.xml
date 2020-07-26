@@ -1,0 +1,65 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ovly.fiori_16.cadastro_de_alunos.controller.Detalhe">
+	<App>
+		<pages>
+			<Page title="Aluno 10" showNavButton="true" navButtonPress="onBack">
+				<content>
+				    <ObjectHeader 
+				        title="{path: 'FirstName',
+				                formatter: '.toUpper'} {LastName}" >
+				        <attributes>
+				            <ObjectAttribute 
+				              text="{
+                                     path: 'BirthDate', 
+                                     type: 'sap.ui.model.type.DateTime', 
+                                     formatOptions:{
+                                         relative: true, 
+                                         UTC: true
+                                        } 
+                                    }" 
+                                    title="Nascimento"/>
+				            <ObjectAttribute text="{CreatedBy}" title="Usuário"/>
+				            </attributes>
+				        </ObjectHeader>
+				    <Panel expandable="true" expanded="true">
+				        <headerToolbar>
+				            <Toolbar id="toolbar1">
+				                <Title text="Dados administrativos"/>
+				                </Toolbar>
+				            
+				        </headerToolbar>
+				        <content>
+				            <core:Fragment fragmentName="ovly.fiori_16.cadastro_de_alunos.view.Detalhe_Form" type="XML" id="form0"/>
+				        </content>
+				        </Panel>
+				    <Panel expandable="true" expanded="true">
+				        <headerToolbar>
+				            <Toolbar>
+				                <Title text="Header"/>
+				                <ToolbarSpacer/>
+				                <Button icon="sap-icon://settings"/>
+				                </Toolbar>
+				            
+				        </headerToolbar>
+				        <content>
+				            <List noDataText="Drop list items here" id="list0">
+				                <items>
+				                    <StandardListItem type="Navigation" title="List Item 1" description="Description text" icon="sap-icon://picture" id="item0"/>
+				                </items>
+				            </List>
+				        </content>
+				        </Panel>
+				</content>
+			<footer>
+			    <Bar>
+			        <contentLeft>
+			            <Button text="Deletar" id="button2" icon="sap-icon://delete" type="Reject"/>
+			        </contentLeft>
+			    <contentRight>
+			        <Button text="Editar" id="button3" icon="sap-icon://edit" type="Accept"/>
+			    </contentRight>
+			    </Bar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

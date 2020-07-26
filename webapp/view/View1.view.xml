@@ -1,0 +1,35 @@
+<mvc:View 
+    controllerName="ovly.fiori_16.cadastro_de_alunos.controller.View1" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" showNavButton="true">
+					<content>
+						<SearchField placeholder="{i18n>ListPlaceholder}" search="onSearch"/>
+						<List id="list" 
+						   items="{/Students}" 
+						   noDataText="{i18n>ListNoDataText}" 
+						   itemPress="onItemPress" 
+						   growing="true"
+						   growingThreshold="10"
+						   growingScrollToLoad="true">
+							<items>
+								<StandardListItem title="{FirstName} {LastName}" info="{UserName}" icon="sap-icon://employee" type="Navigation"/>
+							</items>
+						</List>
+					</content>
+					<footer>
+						<Bar>
+							<contentRight>
+								<Button icon="sap-icon://add" type="Emphasized" press="onAdd"/> 
+							</contentRight>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
